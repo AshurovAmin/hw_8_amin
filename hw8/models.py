@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 
 class Position(models.Model):
@@ -13,7 +12,7 @@ class Position(models.Model):
 class Employee(models.Model):
     fullname = models.CharField(max_length=20)
     birth_date = models.DateField()
-    position = models.ForeignKey(Position, on_delete=models.CASCADE)
+    position = models.CharField(max_length=30)
     salary = models.CharField(max_length=30)
 
     def __str__(self):
